@@ -14,4 +14,4 @@ $(EXEC):$(OBJ)
 	$(CC) -c -Wall $< -o $@
 
 clear:
-	$(RM) *.o  
+	$(RM) *.o $(EXEC) 
