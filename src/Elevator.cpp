@@ -16,7 +16,7 @@ Elevator::~Elevator()
 
 void Elevator::run()
 {
-    static up = true;
+    static bool up = true;
     if(up ){
         if(currentFloor == 19)
             up = false;
