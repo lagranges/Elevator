@@ -2,8 +2,6 @@
 
 Controller::Controller()
 {
-    e1 = new Elevator("In the left");
-    e2 = new Elevator("In the right") ;
     //empty
 }
 
@@ -15,7 +13,11 @@ Controller::~Controller()
 Controller *Controller::getInstance()
 {
     if(_singleton ==  NULL)
+    {
         _singleton = new Controller;
+        e1 = new Elevator("In the left");
+        e2 = new Elevator("In the right") ;
+    }
     return _singleton;
 }
 
@@ -59,5 +61,6 @@ void Controller::run()
 }
 
 Controller *Controller::_singleton = NULL;
-
+Elevator *Controller::e1 = NULL;
+Elevator *Controller::e2 = NULL;
 

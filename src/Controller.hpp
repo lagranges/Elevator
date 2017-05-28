@@ -12,7 +12,7 @@ using namespace std;
 class Controller
 {
     private:
-        Elevator *e1,*e2;
+        static Elevator *e1,*e2;
         static Controller *_singleton; 
     public:
         Controller();

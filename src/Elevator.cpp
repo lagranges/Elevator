@@ -28,7 +28,8 @@ void Elevator::run()
 
 void Elevator::draw()
 {
-    cout << "   I'm in Floor" << currentFloor << endl;
+    cout << "  [Elevator] " << name
+        << " [Current Floor] " << currentFloor << endl;
     for(list<Passenger*>::iterator it = listPassengers.begin()
             ; it != listPassengers.end() ; it++)
     {
@@ -60,4 +61,9 @@ void Elevator::setState(StateElevator s)
 StateElevator Elevator::getState()
 {
     return state;
+}
+
+string Elevator::getName()
+{
+    return name;
 }

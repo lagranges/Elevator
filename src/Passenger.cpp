@@ -107,7 +107,8 @@ void Passenger::toString()
         cout <<"        [Passenger ID ] " << id << " [Kg ] " << weight 
         << " [depart time] " << departDate << "  [from floor] " 
         << departFloor << " [to go to floor] " << destFloor 
-        <<  " [state] " << state << endl;
+        <<  " [state] " << stateString[state] 
+        << " [elevator] " << getElevator()->getName() << endl;
 }
 
 list<Passenger*> *Passenger::listPassenger = new list<Passenger*>;

@@ -10,7 +10,9 @@ using namespace std;
 
 // State transition process for a passenger
 // INIT (waitting for control) -> OUT -> IN -> DONE
-enum StatePassenger {IN, OUT, INIT, DONE} ;
+enum StatePassenger {IN = 0, OUT, INIT, DONE} ;
+static const char* stateString[] = {"inside ", "waiting for", 
+    "init" , "done"};
 
 class Elevator;
 

@@ -38,6 +38,7 @@ class Elevator: public Simulatable
         void addPassenger(Passenger *p);
         StateElevator getState();
         void setState(StateElevator s);
+        string getName();
 
 };
 
