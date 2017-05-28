@@ -1,17 +1,14 @@
 #include <iostream>
 #include <unistd.h>
 
-#include "Elevator.hpp"
-#include "Simulator.hpp"
-#include "Passenger.hpp"
+#include "Controller.hpp"
 
 using namespace std;
 
 int main()
 {
     cout << "Welcome !" << endl;
-    Elevator *e1 = new Elevator;
-    Elevator *e2 = new Elevator;
+    Controller *controller = new Controller();
     // passeger(int date, int depart, int destination, int weight)
     Passenger *p1 = new Passenger(3, 1, 19, 75);
     Passenger *p2 = new Passenger(3, 9, 4, 82);
@@ -19,9 +16,6 @@ int main()
     Passenger *p4 = new Passenger(10, 1, 18, 100);
     Passenger *p5 = new Passenger(19, 20, 2, 65);
     Passenger *p6 = new Passenger(22, 18, 4, 120);
-
-    e1->reset();
-    e2->reset();
 
     p1->reset();
     p2->reset();
@@ -31,9 +25,12 @@ int main()
     p6->reset();
 
     Simulator::getInstance()->restart();
+
+    string s;
     while(1){
+        cout << "SIMULATION$> ";
+        cin >> s;
         Simulator::getInstance()->next();
-        usleep(1000000);
     }
     
     return 0;

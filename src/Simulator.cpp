@@ -1,4 +1,5 @@
 #include "Simulator.hpp"
+#include "Controller.hpp"
 
 Simulator::Simulator()
 {
@@ -33,12 +34,12 @@ void Simulator::draw()
 
 void Simulator::next() 
 {
-    
+    simulationDate++;
+    Controller::getInstance()->run();   
     for(std::list<Simulatable*>::iterator it = listSimulatables.begin();
             it != listSimulatables.end(); it++){
         (*it)->run();
     }
-    simulationDate++;
     cout << "Step " << simulationDate << endl;
     draw();
 }

@@ -3,8 +3,9 @@
 #include "Elevator.hpp"
 #include "Simulator.hpp"
 
-Elevator::Elevator()
+Elevator::Elevator(string name)
 {
+    this->name = name;
     reset();
 }
 
@@ -15,8 +16,12 @@ Elevator::~Elevator()
 
 void Elevator::run()
 {
-    if(currentFloor < 19)
+    static up = true;
+    if(up ){
+        if(currentFloor == 19)
+            up = false;
         currentFloor++;
+    }
     else
         currentFloor--;
 }
@@ -24,13 +29,17 @@ void Elevator::run()
 void Elevator::draw()
 {
     cout << "   I'm in Floor" << currentFloor << endl;
+    for(list<Passenger*>::iterator it = listPassengers.begin()
+            ; it != listPassengers.end() ; it++)
+    {
+        (*it)->toString();
+    }
 }
 
 void Elevator::reset()
 {
-    //weight = 0;
     currentFloor = 1;
-    etat = STOP;
+    state = STOP;
 }
 
 int Elevator::getCurrentFloor()
@@ -41,4 +50,14 @@ int Elevator::getCurrentFloor()
 void Elevator::addPassenger(Passenger *p)
 {
     listPassengers.insert(listPassengers.begin(),p);
+}
+
+void Elevator::setState(StateElevator s)
+{
+   state = s; 
+}
+
+StateElevator Elevator::getState()
+{
+    return state;
 }
