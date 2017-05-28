@@ -84,7 +84,7 @@ int Passenger::getDepartFloor()
 
 int Passenger::getDestFloor()
 {
-    return departFloor;
+    return destFloor;
 }
 
 int Passenger::getWeight()

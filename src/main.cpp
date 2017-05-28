@@ -10,7 +10,7 @@ int main()
     cout << "Welcome !" << endl;
     Controller *controller = new Controller();
     // passeger(int date, int depart, int destination, int weight)
-    Passenger *p1 = new Passenger(3, 1, 19, 75);
+    Passenger *p1 = new Passenger(3, 10, 19, 75);
     Passenger *p2 = new Passenger(3, 9, 4, 82);
     Passenger *p3 = new Passenger(6, 6, 9, 76);
     Passenger *p4 = new Passenger(10, 1, 18, 100);
