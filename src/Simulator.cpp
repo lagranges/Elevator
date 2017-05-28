@@ -56,4 +56,8 @@ void Simulator::restart()
     draw();
 }
 
+int Simulator::getDate()
+{
+    return simulationDate;
+}
 Simulator *Simulator::_singleton = NULL;

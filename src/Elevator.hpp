@@ -5,6 +5,7 @@
 #include <list>
 
 #include "Simulatable.hpp"
+#include "Passenger.hpp"
 
 using namespace std;
 /**
@@ -14,6 +15,8 @@ using namespace std;
  *
  */
 enum Etat {STOP, GOING_UP, GOING_DOWN, STOP_UP, STOP_DOWN};
+
+class Passenger;
 
 class Elevator: public Simulatable
 {
@@ -29,10 +32,11 @@ class Elevator: public Simulatable
          * date i (or i-20 or i-60)
          * movePlan[0] presents current Etat 
          */
-         list<int> movePlan [60];     
+         list<int> movePlan [80];     
          Etat etat;
          Etat nextEtat;
          int waitedTime;
+         list<Passenger*> listPassengers;
     public:
         Elevator();
         ~Elevator();
@@ -40,6 +44,7 @@ class Elevator: public Simulatable
         virtual void draw();
         virtual void reset();
         int getCurrentFloor();
+        void addPassenger(Passenger *p);
 
 };
 

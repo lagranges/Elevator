@@ -22,6 +22,7 @@ class Simulator
         void draw();
         void next();
         void restart();
+        int getDate();
 };
 
 #endif // SIMULATOR_INCLUDED

@@ -6,7 +6,6 @@
 Elevator::Elevator()
 {
     reset();
-    Simulator::getInstance()->addSimulatable(this);
 }
 
 Elevator::~Elevator()
@@ -37,4 +36,9 @@ void Elevator::reset()
 int Elevator::getCurrentFloor()
 {
     return currentFloor;  
+}
+
+void Elevator::addPassenger(Passenger *p)
+{
+    listPassengers.insert(listPassengers.begin(),p);
 }

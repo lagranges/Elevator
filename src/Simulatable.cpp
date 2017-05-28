@@ -1,6 +1,10 @@
 #include "Simulatable.hpp"
+#include "Simulator.hpp"
 
-Simulatable::Simulatable(){}
+Simulatable::Simulatable()
+{
+    Simulator::getInstance()->addSimulatable(this);
+}
 
 Simulatable::~Simulatable(){}
 
